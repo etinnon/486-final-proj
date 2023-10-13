@@ -1,12 +1,12 @@
 # 486-final-proj
 
-We are Team Bakers! 🧁
+<h1>We are Team Bakers! 🧁</h1>
 
 Read more about our team in wiki 📖
 
 For our final product, we are going to develop something that we can use in our everyday lives.
 
-⭐ Here is our user story:  
+<h3>⭐ Here is our user story:  </h3>
 
 **As A** bakery-loving user  
 
