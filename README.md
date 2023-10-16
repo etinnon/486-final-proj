@@ -1,4 +1,4 @@
-# 486-final-proj
+# bakers-dozen
 
 <h1>We are Team Bakers! 🧁</h1>
 
