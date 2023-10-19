@@ -14,3 +14,8 @@ For our final product, we are going to develop something that we can use in our 
 
 **So that** I can view the menu, order products, and keep up with Southend Kitchcen all in one place! 
 
+
+
+
+Current Ordering System:
+![texting](https://github.com/etinnon/bakers-dozen/assets/122556101/97b740dc-f2cc-437c-b2e3-ddbe8446e471)
