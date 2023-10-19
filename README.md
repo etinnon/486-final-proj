@@ -8,9 +8,9 @@ For our final product, we are going to develop something that we can use in our 
 
 <h3>⭐ Here is our user story:  </h3>
 
-**As A** bakery-loving user  
+**As A** sweets lover 
 
-**I want** a functioning interface, including a form for my info  
+**I want** a functioning interface, including an order form
 
-**So that** I can view the menu and order products all in one place
+**So that** I can view the menu, order products, and keep up with Southend Kitchcen all in one place! 
 
