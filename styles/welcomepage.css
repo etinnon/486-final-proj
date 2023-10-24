@@ -1,0 +1,14 @@
+.welcome-card {
+    background: #FFFAF5;
+    border: 0.2cm solid #D78963;
+  }
+
+  .flex {
+    border-spacing:5px; 
+    display:table;
+    table-layout:fixed;
+    width:100%;
+    }
+  .flex div {
+    display:table-cell;
+    }

@@ -1,0 +1,12 @@
+.footer-card {
+  width: 90%;
+  bottom: 0%;
+  margin: auto;
+  text-align: center;
+  padding-left: 50px; 
+  /* margin-left: 50px; */
+  /* top: 0; */
+  /* left: 0;  */
+  background: #FFFAF5;
+  border: 0.2cm solid #D78963;
+}

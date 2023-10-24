@@ -1,7 +1,105 @@
+<head>
+  <title>Trowbridges Mobile Order</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/tabs.css">
+  <link rel="stylesheet" href="styles/orderpage.css">
+  <link rel="stylesheet" href="styles/shoppingcart.css">
+  <link rel="stylesheet" href="styles/welcomepage.css">
+
+
+</head>
+
+
 <%- include('partials/html-head') %>
 <%- include('partials/background') %>
 
 <body class="container-fluid">
+
+  <!-- START TABS -->
+  <h1><img src="" width="80px" height="80px" alt="Scoops">
+    Trowbridge's Mobile Order App!
+    <img src="./public/img/food.jpg" width="80px" height="80px" alt="Scoops">
+  </h1>
+
+  <div class="tab_container1">
+    <input id="tab1" type="radio" name="tabs" checked>
+    <label for="tab1"><span>Welcome</span></label>
+
+    <input id="tab2" type="radio" name="tabs">
+    <label for="tab2"><span>Menu</span></label>
+
+    <input id="tab3" type="radio" name="tabs">
+    <label for="tab3"><span>Order</span></label>
+    <!-- END TABS -->
+
+
+    <body>
+      <!-- WELCOME PAGE-->
+      <%- include('partials/welcome') %>
+
+        <!-- MENU PAGE -->
+        <%- include('partials/menu') %>
+
+          <!-- START ORDER PAGE -->
+          <section id="content3" class="tab-content">
+
+            <div class="order-completed-container" id="order-completed-container">
+              <div class="thankyou-screen" id="thankyou-screen"></div>
+            </div>
+
+            <div class="card" <br>
+              <h1>Place your Order Below By Clicking Your Scoop Flavors:</h1>
+
+
+              <div class="menu" id="scoop"></div>
+
+
+
+
+              <div class="order-total" id="order-total">
+                <h1>                 
+                Your Order
+                </h1>
+
+                <div class="total" id="total">
+                </div>
+                <h3 class="total-price" id="total-price"></h3>
+                <button id="thankyou-btn" class="thankyou-btn" id="thankyou-btn">Pay in Store</button>
+                <button id="complete-order-btn" class="complete-order-btn">Pay Online</button>
+              </div>
+
+
+              <div class="overlay">
+                <div class="modal hidden" id="modal">
+                  <form method="post" action="/gmail">
+                    <div class="close-modal-btn-container">
+                      <button class="modal-close-btn" id="modal-close-btn">X</button>
+                    </div>
+                    <h1>Please Enter Your Card Details</h2>
+                      <label for="name"></label>
+                      <input id="name" name="name" type="text" placeholder="Enter your name" required> <br> <br>
+                      <input id="email" name="email" type="email" placeholder="email@gmail.com" required>
+                      <label for="cardNumber"></label>
+                      <input type="number" id="cardNumber" placeholder="Enter your card number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="9" required>
+                      <label for="CVV"></label>
+                      <input type="number" id="CVV" placeholder="Enter CVV"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3" required>
+                      <input type="submit" class="pay-btn" value="PAY">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- END ORDER PAGE-->
+
+
+
+
 
 <div class="row">
   <div class="col-md-6">

@@ -1,0 +1,41 @@
+/* Styles for tabs */
+label {
+  font-weight: 700;
+  font-size: 18px;
+  display: auto;
+  float: left;
+  width: 33.33%;
+  padding: 1.5em;
+  /*tab text colors*/
+  color: #FFF7D7;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  /* border: 3px solid #6E3E1E; */
+}
+
+/* displays content */
+#tab1:checked~#content1,
+#tab2:checked~#content2,
+#tab3:checked~#content3
+
+ {
+  display: block;
+  padding: 10px;
+  background: #FFF7D7;
+  color: #6E3E1E;
+  /* border-top: #6E3E1E; */
+  /* border-bottom: 2px solid #6E3E1E; */
+}
+
+
+.tab_container1 {
+  background: #E97575;
+}
+
+/* These hide the radio buttons */
+#tab1,
+#tab2,
+#tab3 {
+  display: none;
+}

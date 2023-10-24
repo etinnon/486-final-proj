@@ -1,0 +1,74 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+/*Clears contents when you change tabs*/
+section {
+  clear: both;
+  display: none;
+  position: center;
+  background: #FFF7D7;
+}
+
+.card {
+  background: #FFFAF5;
+  border-width: 0.2cm;
+  border-color: #D78963;
+}
+
+
+.card-body {
+  position: center;
+  text-align: center;
+}
+
+
+h1,h2,h3,h4 {
+  color: #6E3E1E;
+  font-family: 'Playball', cursive;
+  text-align: center;
+}
+
+h5 {
+  color: #6E3E1E;
+  font-family: 'Playball', cursive;
+  text-align: left;
+}
+
+h6 {
+  color: #6E3E1E;
+  font-family: 'Playball', cursive;
+  text-align: right;
+}
+
+html {
+  background: #FFF7D7;
+  ;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF7D7;
+}
+
+body,
+button {
+  font-family: 'Smythe', cursive;
+}
+
+
+/* menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #FFFAF5;
+}
+
+
+
