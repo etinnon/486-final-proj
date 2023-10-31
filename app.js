@@ -90,24 +90,25 @@ app.post('/updateProfile', async (req, res) => {
 
 
 // Insert users into database
-app.post('/insertProfile', async (req, res) => {
+app.post('/submitOrder', async (req, res) => {
 
   try {
     //get the new dev name
     console.log("body: ", req.body)
-    console.log("user Name: ", req.body.devName)
+    console.log("user Name: ", req.body.custName)
     
     client.connect; 
     const collection = client.db("humphries-cool-papa-database").collection("dev-profiles");
   
     // put it into mongo
     let result = await collection.insertOne( 
-      { name: req.body.newDevName })
+      { CustomerName: req.body.custName, CustomerEmail: req.body.email })
       .then(result => {
         console.log(result); 
         res.redirect('/');
       })
       .catch(error => console.error(error))
+      
      
    
   }
