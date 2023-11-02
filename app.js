@@ -102,7 +102,7 @@ app.post('/submitOrder', async (req, res) => {
   
     // put it into mongo
     let result = await collection.insertOne( 
-      { CustomerName: req.body.custName, CustomerEmail: req.body.email })
+      { CustomerName: req.body.custName, CustomerPhone: req.body.phone, CustomerCake: req.body.optradio, CustomerCustomize: req.body.customize  })
       .then(result => {
         console.log(result); 
         res.redirect('/');
