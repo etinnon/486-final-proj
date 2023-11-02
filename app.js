@@ -5,7 +5,10 @@ const bodyParser = require('body-parser')
 const { ObjectId } = require('mongodb')
 const port = (process.env.PORT || 5500)
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = process.env.MONGO_URI; 
+const uri = process.env.MONGO_URI;
+// email||text capability
+const nodemailer = require('nodemailer')
+// pass: process.env.APP_PWD
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -169,6 +172,32 @@ app.post('/postClientData', function (req, res) {
   }
   );
 })
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'anna.stokes.e@gmail.com',
+    // Password needs to be hidden in ENV file
+    pass: process.env.APP_PWD
+  }
+});
+
+var mailOptions = {
+  from: 'anna.stokes.e@gmail.com',
+  to: 3343200695@vtext.com,
+  subject: 'Southend Kitchen Inquiry Confirmation!',
+  text; ' Hello Anna, ' + req.body.name +', left an order inquiry! Please review and respond as quicly as possible!
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+
+res.redirect('/');
+})
+
 
 
 // app.get('/', function (req, res) {
