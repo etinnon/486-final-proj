@@ -8,19 +8,8 @@ For our final product, we are going to develop something that we can use in our 
 
 <h3>⭐ Here is our user story:  </h3>
 
-**As A** sweets lover 
+**As A** small business owner
 
 **I want** a functioning interface, including an order form
 
-**So that** I can view the menu, order products, and keep up with Southend Kitchen all in one place! 
-
-
-
-
-
-
-<h3>Current Ordering System:</h3>
-
-![Southend Facebook](https://github.com/etinnon/bakers-dozen/assets/122556101/96f7e2c2-da9a-403a-91cb-cab62a48a6be)
-
-![texting](https://github.com/etinnon/bakers-dozen/assets/122556101/97b740dc-f2cc-437c-b2e3-ddbe8446e471)
+**So that** customers can view the menu, order products, and keep up with Southend Kitchen all in one place! 
