@@ -3,7 +3,6 @@
 <%- include('partials/html-head') %>
 <%- include('partials/background') %>
 
-
 <body class="container-fluid">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <div class="container-fluid">
@@ -27,6 +26,15 @@
             <a class="nav-link" target="_blank" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fkaibrysouthern.github.io%2Ffictional-guide-hotel%2F">
               Validate page!</a>
           </li> 
+          <li>
+            <div class="login-container">
+              <form action="/views/login.html" method = "post">
+                <input type="text" placeholder="Username" name="username">
+                <input type="text" placeholder="Password" name="psw">
+                <button type="submit">Login</button>
+              </form>
+            </div>
+          </li>
           </ul>
         </div>
       </div>

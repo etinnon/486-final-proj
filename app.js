@@ -171,6 +171,22 @@ app.post('/postClientData', function (req, res) {
 })
 
 
+app.post('/view/login.html', function (req, res) {
+  
+  console.log("body: ", req.body)
+  console.log("user Name: ", req.body.userName)
+ //  console.log("params: ", req.params['userName']);
+ 
+ // myVariableServer = req.body.userName;
+
+ res.render('index', 
+ {
+   'myVariableClient' : req.body.userName 
+ }
+ );
+})
+
+
 // app.get('/', function (req, res) {
 //   res.send('<h1>Hello World From Express & a PaaS/Render</h1>')
 // })

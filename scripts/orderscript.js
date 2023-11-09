@@ -67,3 +67,5 @@ $(function () {
 	  if (getValue.value !="") {
 		getValue.value = "";
 	  }}
+
+	  
