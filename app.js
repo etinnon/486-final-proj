@@ -19,6 +19,44 @@ const client = new MongoClient(uri, {
   }
 });
 
+
+
+app.post('/login', (req, res) => {
+  res.render('login');
+
+});
+
+
+app.post('/adminCenter', (req, res) => {
+  res.render('adminCenter');
+
+});
+
+// app.get('/', (req, res) => {
+//   res.render('views/login');
+
+// });
+
+
+app.post('/postClientData', function (req, res) {
+  
+  console.log("body: ", req.body)
+  console.log("user Name: ", req.body.userName)
+ //  console.log("params: ", req.params['userName']);
+ 
+ // myVariableServer = req.body.userName;
+
+ res.render('index', 
+ {
+   'myVariableClient' : req.body.userName 
+ }
+ );
+})
+
+
+
+
+
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
@@ -117,6 +155,33 @@ app.post('/submitOrder', async (req, res) => {
   }
 })
 
+// Insert users into database
+app.post('/insertProfile', async (req, res) => {
+
+  try {
+    //get the new dev name
+    console.log("body: ", req.body)
+    console.log("user Name: ", req.body.devName)
+    
+    client.connect; 
+    const collection = client.db("humphries-cool-papa-database").collection("dev-profiles");
+  
+    // put it into mongo
+    let result = await collection.insertOne( 
+      { name: req.body.newDevName })
+      .then(result => {
+        console.log(result); 
+        res.redirect('/');
+      })
+      .catch(error => console.error(error))
+     
+   
+  }
+  finally{
+    //client.close()
+  }
+})
+
 
 // delete users from database
 app.post('/deleteProfile', async (req, res) => {
@@ -171,20 +236,6 @@ app.post('/postClientData', function (req, res) {
 })
 
 
-app.post('/view/login.html', function (req, res) {
-  
-  console.log("body: ", req.body)
-  console.log("user Name: ", req.body.userName)
- //  console.log("params: ", req.params['userName']);
- 
- // myVariableServer = req.body.userName;
-
- res.render('index', 
- {
-   'myVariableClient' : req.body.userName 
- }
- );
-})
 
 
 // app.get('/', function (req, res) {
