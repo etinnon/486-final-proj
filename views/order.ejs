@@ -1,0 +1,52 @@
+
+
+<%- include('partials/html-head') %>
+<%- include('partials/background') %>
+
+<body class="container-fluid">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" >
+          Baker's Dozen</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+     
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="/">
+              About Us!</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="">
+              Order Now!</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://github.com/etinnon/bakers-dozen">
+              Click For Repo!</a>
+          </li> 
+          <li>
+            <div class="login-container">
+              <form action="login" method = "post">
+                <button type="submit">Admin Login</button>
+              </form>
+            </div>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1>Welcome to Baker's Dozen! Please customize a cake and submit your order Request!</h1>
+ 
+<%- include('partials/cards') %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script src="/scripts/orderscript.js"></script>
+</body>
+</html>
