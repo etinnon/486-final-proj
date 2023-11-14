@@ -1,90 +1,166 @@
 <div class="row">
-    <!-- First Card -->
-        <div class="col-sm-4">
-          <form method="post" action="/submitOrder">
-          <div class="card m-3 bg-info text-dark">
-            <h4 class="card-title">Pound Cake</h4>
-            <div class="card-body">
-              <img class="card-img-top img-responsive" src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/359345400_138163002637538_8962672734359215990_n.jpg?stp=cp1_dst-jpg_e15_fr_q65&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&efg=eyJpIjoidCJ9&_nc_ohc=CcN59suERJ4AX86s4j6&tn=fVnIh5mw24GfdmSr&_nc_ht=scontent-atl3-1.xx&oh=00_AfDHtYxL88rNmBlT6MjNQ5v7cpihUoB6yetjvTIvHC0Qng&oe=654831B0" alt="Pound Cake" width= '250' height= '350'> 
-              <p class="card-text">Cake description</p>
-              <p class="card-text">Cake sizes</p>
-              <div class="form-check">
-                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="PoundCakeSizeLarge" >Pound Cake
-                <label class="form-check-label" for="radio1"></label>
-              </div>
-              <div class="form-check">
-                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="PoundCakeSizeMedium" >Pound Cake
-                <label class="form-check-label" for="radio1"></label>
-              </div>
-              <div class="mb-3 mt-3">
-                <label for="custName" class="form-label">Name</label>
-                <input type="textbox1" class="form-control" id="custName" placeholder="" name="custName">
-              </div>
-              <div class="mb-3">
-                <label for="phone" class="form-label">Phone:</label>
-                <input type="textbox" class="form-control" id="phone" placeholder="" name="phone">
-              </div>
-              <label for="textbox" > Explain how you would like your cake customized</label> <br>
-              <aside><textarea id="textarea" placeholder= "place text here" name="customize" rows="4" cols="50"></textarea></aside>
-              <button id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
-              <button id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+  <!-- First Card -->
+      <div class="col-sm-4">
+        <form method="post" action="/submitOrder">
+        <div class="card m-3 bg-info text-dark">
+          <h4 class="card-title">Pound Cake</h4>
+          <div class="card-body">
+            <img class="card-img-top img-responsive" src="/img/poundcake.jpg" alt="Pound Cake" width= '250' height= '350'> 
+            <p class="card-text">Cake description</p>
+            <p class="card-text">Cake sizes</p>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeLarge" >Pound Cake
+              <label class="form-check-label" for="radio1"></label>
             </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeMedium" >Pound Cake
+              <label class="form-check-label" for="radio1"></label>
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="custName" class="form-label">Name</label>
+              <input type="textbox1" class="form-control" id="custName" placeholder="" name="custName">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone:</label>
+              <input type="textbox" class="form-control" id="phone" placeholder="" name="phone">
+            </div>
+            <label for="textbox" > Explain how you would like your cake customized</label> <br>
+            <aside><textarea id="textarea" placeholder= "place text here" name="customize" rows="4" cols="50"></textarea></aside>
+            <button id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
+            <button id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
           </div>
         </div>
-    
-    <!-- Second Card -->
-    <div class="col-sm-4">
-          <div class="card m-3 bg-success text-white">
-            <h4 class="card-title">Butter Pecan</h4>
-            <div class="card-body">
-              <img class="card-img-top" src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/357513817_133926066394565_2810686154157186724_n.jpg?stp=cp1_dst-jpg_e15_fr_q65&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&efg=eyJpIjoidCJ9&_nc_ohc=V6aZ2exowVcAX--F3nM&_nc_ht=scontent-atl3-1.xx&oh=00_AfBWZWjJDH-1RBLGlRJDM7gwRv8Hn88lf-3BgSDko3g5BA&oe=65481008" alt="Butter Pecan" width= '250' height= '350'>
-              <p class="card-text">Cake description</p>
-              <p class="card-text">Cake sizes</p>
-              <a href="" class="btn btn-primary">Add to Cart!</a>
-       
-            </div>
-          </div>
-        </div>
-     <!-- Third Card -->
-        <div class="col-sm-4">
-          <div class="card m-3 bg-success text-white">
-            <h4 class="card-title">Lemon Velvet</h4>
-            <div class="card-body">
-              <img class="card-img-top" src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/358609595_133926203061218_8445611987562563238_n.jpg?stp=cp1_dst-jpg_e15_fr_q65&_nc_cat=106&ccb=1-7&_nc_sid=5f2048&efg=eyJpIjoidCJ9&_nc_ohc=WUCI0-NbE0EAX_gsL2j&_nc_ht=scontent-atl3-1.xx&oh=00_AfAHkiT6DFZnY8e8uT6UIW9_EFBxoUosH9jzsFg55NfIsw&oe=6547A25F" alt="Lemon Velvet" width= '250' height= '350'>
-              <p class="card-text">Cake description</p>
-              <p class="card-text">Cake sizes</p>
-              <a href="" class="btn btn-primary">Add to Cart!</a>
-       
-            </div>
-          </div>
-        </div>
-        
-       <!-- Fourth Card -->
-        <div class="col-sm-4">
-          <div class="card m-3 bg-success text-white">
-            <h4 class="card-title">Red Velvet</h4>
-            <div class="card-body">
-              <img class="card-img-top" src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/358579058_133926123061226_3280849769291422429_n.jpg?stp=cp1_dst-jpg_e15_fr_q65&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&efg=eyJpIjoidCJ9&_nc_ohc=3a7CdOqNAIIAX-yPbwN&_nc_ht=scontent-atl3-1.xx&oh=00_AfBXIH9CDSPG2ik0XhEE3ylV7kGj0USmQuYZJKRtIZOgBg&oe=654836FB" alt="Red Velvet" width= '250' height= '350'>
-              <p class="card-text">Cake description</p>
-              <p class="card-text">Cake sizes</p>
-              <a href="" class="btn btn-primary">Add to Cart!</a>
-       
-            </div>
-          </div>
-        </div>
-        
-     <!-- Fifth Card -->
-        <div class="col-sm-4">
-          <div class="card m-3 bg-success text-white">
-            <h4 class="card-title">Key Lime</h4>
-            <div class="card-body">
-              <img class="card-img-top" src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/380409790_178804135240091_6982848008478549739_n.jpg?stp=cp1_dst-jpg_e15_fr_q65&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&efg=eyJpIjoidCJ9&_nc_ohc=YcZrJNfKr60AX98vjLG&_nc_ht=scontent-atl3-1.xx&oh=00_AfAfrYe_BJobKGrbBu5s8JQmEDf0POy2VGjsnznxSeeKbQ&oe=6547877A" alt="Key Lime" width= '250' height= '350'>
-              <p class="card-text">Cake description</p>
-              <p class="card-text">Cake sizes</p>
-              <a href="" class="btn btn-primary">Add to Cart!</a>
-       
-            </div>
-          </div>
-        </div>
-        
       </div>
+  
+  <!-- Second Card -->
+  <div class="col-sm-4">
+    <form method="post" action="/submitOrder">
+    <div class="card m-3 bg-info text-dark">
+      <h4 class="card-title">Butter Pecan</h4>
+      <div class="card-body">
+        <img class="card-img-top img-responsive" src="/img/butter pecan.jpg" width= '250' height= '350'> 
+        <p class="card-text">Cake description</p>
+        <p class="card-text">Cake sizes</p>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeLarge" >Butter Pecan Cake Medium
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeMedium" >Butter Pecan Cake Large
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="custName" class="form-label">Name</label>
+          <input type="textbox1" class="form-control" id="custName" placeholder="" name="custName">
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone:</label>
+          <input type="textbox" class="form-control" id="phone" placeholder="" name="phone">
+        </div>
+        <label for="textbox" > Explain how you would like your cake customized</label> <br>
+        <aside><textarea id="textarea" placeholder= "place text here" name="customize" rows="4" cols="50"></textarea></aside>
+        <button id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
+        <button id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+      </div>
+    </div>
+  </div>
+   <!-- Third Card -->
+   <div class="col-sm-4">
+    <form method="post" action="/submitOrder">
+    <div class="card m-3 bg-info text-dark">
+      <h4 class="card-title">Lemon Velvet</h4>
+      <div class="card-body">
+        <img class="card-img-top img-responsive" src="/img/Lemon Velvet.jpg" width= '250' height= '350'> 
+        <p class="card-text">Cake description</p>
+        <p class="card-text">Cake sizes</p>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeLarge" >Lemon Velvet Cake Medium
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeMedium" >Lemon Velvet Cake Large
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="custName" class="form-label">Name</label>
+          <input type="textbox1" class="form-control" id="custName" placeholder="" name="custName">
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone:</label>
+          <input type="textbox" class="form-control" id="phone" placeholder="" name="phone">
+        </div>
+        <label for="textbox" > Explain how you would like your cake customized</label> <br>
+        <aside><textarea id="textarea" placeholder= "place text here" name="customize" rows="4" cols="50"></textarea></aside>
+        <button id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
+        <button id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+      </div>
+    </div>
+  </div>
+      
+     <!-- Fourth Card -->
+     <div class="col-sm-4">
+      <form method="post" action="/submitOrder">
+      <div class="card m-3 bg-info text-dark">
+        <h4 class="card-title">Red Velvet</h4>
+        <div class="card-body">
+          <img class="card-img-top img-responsive" src="/img/redvelvet.jpg" width= '250' height= '350'> 
+          <p class="card-text">Cake description</p>
+          <p class="card-text">Cake sizes</p>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeLarge" >Red Velvet Cake Medium
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeMedium" >Red Velvet Cake Large
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="custName" class="form-label">Name</label>
+            <input type="textbox1" class="form-control" id="custName" placeholder="" name="custName">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone:</label>
+            <input type="textbox" class="form-control" id="phone" placeholder="" name="phone">
+          </div>
+          <label for="textbox" > Explain how you would like your cake customized</label> <br>
+          <aside><textarea id="textarea" placeholder= "place text here" name="customize" rows="4" cols="50"></textarea></aside>
+          <button id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
+          <button id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+        </div>
+      </div>
+    </div>
+      
+   <!-- Fifth Card -->
+   <div class="col-sm-4">
+    <form method="post" action="/submitOrder">
+    <div class="card m-3 bg-info text-dark">
+      <h4 class="card-title">Key Lime</h4>
+      <div class="card-body">
+        <img class="card-img-top img-responsive" src="/img/keylime.jpg" width= '250' height= '350'> 
+        <p class="card-text">Cake description</p>
+        <p class="card-text">Cake sizes</p>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeLarge" >Key Lime Cake Medium
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeMedium" >Key Lime Cake Large
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="custName" class="form-label">Name</label>
+          <input type="textbox1" class="form-control" id="custName" placeholder="" name="custName">
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone:</label>
+          <input type="textbox" class="form-control" id="phone" placeholder="" name="phone">
+        </div>
+        <label for="textbox" > Explain how you would like your cake customized</label> <br>
+        <aside><textarea id="textarea" placeholder= "place text here" name="customize" rows="4" cols="50"></textarea></aside>
+        <button id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
+        <button id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+      </div>
+    </div>
+  </div>
+      
+    </div>
