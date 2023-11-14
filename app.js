@@ -5,10 +5,58 @@ const bodyParser = require('body-parser')
 const { ObjectId } = require('mongodb')
 const port = (process.env.PORT || 5500)
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = process.env.MONGO_URI; 
+const uri = process.env.MONGO_URI;
+// email||text capability
+const nodemailer = require('nodemailer')
+const ejs = require('ejs');
+// pass: process.env.APP_PWD
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// Set up Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'mail_send',
+    pass: 'mail_pass',
+  },
+});
+
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+// Define a route to send the email
+app.get('/sendEmail', (req, res) => {
+  // Render the EJS template with the text you want to send
+  ejs.renderFile(__dirname + '/views/email.ejs', { message: 'Anna, you received a new order - please get back with your customer immediately!' }, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      // Define email options
+      const mailOptions = {
+        from: email.env.mail_send,
+        to: email.env.mail_get,
+        subject: 'New Order Inquiry!',
+        html: data,
+      };
+
+      // Send the email (error message)
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.log(error);
+          res.send('Error: ' + error);
+        } else {
+          console.log('Email sent: ' + info.response);
+          res.send('Email sent: ' + info.response);
+        }
+      });
+    }
+  });
+});
+
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -18,19 +66,6 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   }
 });
-
-
-app.post('/login', (req, res) => {
-  res.render('login');
-
-});
-
-// app.get('/adminCenter', (req, res) => {
-  
-//   res.render('adminCenter');
-
-// });
-
 
 async function run() {
   try {
@@ -69,19 +104,9 @@ app.get('/', async (req, res) => {
 // console.log("get/: ", result);
 console.log(mongoResult);
   //'res.send("here for a second: " + result[0].name)
-  res.render('index')
+  res.render('index', { 
+    profileData : mongoResult })
 })
-
-app.get('/order', async (req, res) => {
-
-  client.connect;
-   let mongoResult = await client.db("humphries-cool-papa-database").collection("dev-profiles").find().toArray();
- // console.log("get/: ", result);
- console.log(mongoResult);
-   //'res.send("here for a second: " + result[0].name)
-   res.render('order', { 
-     profileData : mongoResult })
- })
 
 // Update Database
 app.post('/updateProfile', async (req, res) => {
@@ -125,7 +150,7 @@ app.post('/submitOrder', async (req, res) => {
   
     // put it into mongo
     let result = await collection.insertOne( 
-      { CustomerName: req.body.custName, CustomerPhone: req.body.phone, CustomerCake: req.body.optradio, CustomerCustomize: req.body.customize  })
+      { CustomerName: req.body.custName, CustomerEmail: req.body.email })
       .then(result => {
         console.log(result); 
         res.redirect('/');
@@ -168,6 +193,15 @@ app.post('/deleteProfile', async (req, res) => {
   }
 })
 
+let myVariableServer = 'soft coded server data';
+
+app.get('/humphries', function (req, res) {
+  res.render('index', 
+  {
+    'myVariableClient' : myVariableServer 
+  }
+  );
+})
 
 app.post('/postClientData', function (req, res) {
   
@@ -184,21 +218,31 @@ app.post('/postClientData', function (req, res) {
   );
 })
 
-app.get('/adminCenter', async (req, res) => {
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: emai.env.mail_send',
+    // Password needs to be hidden in ENV file
+    pass: email.env.mail_pass',
+  }
+});
 
-  client.connect;
-   let mongoResult = await client.db("humphries-cool-papa-database").collection("dev-profiles").find().toArray();
- // console.log("get/: ", result);
- console.log(mongoResult);
-   //'res.send("here for a second: " + result[0].name)
-   res.render('adminCenter', { 
-     profileData : mongoResult })
- })
+var mailOptions = {
+  from: 'anna.stokes.e@gmail.com',
+  to: email.env.mail_get',
+  subject: 'Southend Kitchen Inquiry Confirmation!',
+  text; ' Hello Anna, ' + req.body.name +', left an order inquiry! Please review and respond as quicly as possible!
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
 
+res.redirect('/');
+})
 
-
- 
- 
 
 
 // app.get('/', function (req, res) {
