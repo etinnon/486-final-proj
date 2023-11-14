@@ -56,9 +56,19 @@ app.get('/', async (req, res) => {
 // console.log("get/: ", result);
 console.log(mongoResult);
   //'res.send("here for a second: " + result[0].name)
-  res.render('index', { 
-    profileData : mongoResult })
+  res.render('index')
 })
+
+app.get('/order', async (req, res) => {
+
+  client.connect;
+   let mongoResult = await client.db("humphries-cool-papa-database").collection("dev-profiles").find().toArray();
+ // console.log("get/: ", result);
+ console.log(mongoResult);
+   //'res.send("here for a second: " + result[0].name)
+   res.render('order', { 
+     profileData : mongoResult })
+ })
 
 // Update Database
 app.post('/updateProfile', async (req, res) => {
