@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/html-head') %>
+    <%- include('partials/background') %>
+    <body class="container-fluid">
+
+
+      <div class="row">
+        <div class="col-md-6 offset-md-3 card mt-3">
+          <h2 class="card-title">Welcome to the Admin Login</h2>
+          <h3 class="card-title" >If you are an Admin please login. If not please go back. </h3>
+          <form method = "get" action="adminCenter">
+            <div class="mb-3 mt-3">
+              <label for="userName" class="form-label">Username: </label>
+              <input
+                type="userName"
+                class="form-control"
+                id="userName"
+                placeholder="Enter Username"
+                name="userName"
+              >
+            </div>
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="pwd"
+                placeholder="Enter password"
+                name="pswd"
+                
+              >
+              <input type="submit" value="Submit">
+            </div>
+            </form>
+        </div>
+        </div>
+    
+</body>
+</html>

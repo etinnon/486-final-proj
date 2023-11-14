@@ -19,6 +19,19 @@ const client = new MongoClient(uri, {
   }
 });
 
+
+app.post('/login', (req, res) => {
+  res.render('login');
+
+});
+
+// app.get('/adminCenter', (req, res) => {
+  
+//   res.render('adminCenter');
+
+// });
+
+
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
@@ -155,15 +168,6 @@ app.post('/deleteProfile', async (req, res) => {
   }
 })
 
-let myVariableServer = 'soft coded server data';
-
-app.get('/humphries', function (req, res) {
-  res.render('index', 
-  {
-    'myVariableClient' : myVariableServer 
-  }
-  );
-})
 
 app.post('/postClientData', function (req, res) {
   
@@ -179,6 +183,22 @@ app.post('/postClientData', function (req, res) {
   }
   );
 })
+
+app.get('/adminCenter', async (req, res) => {
+
+  client.connect;
+   let mongoResult = await client.db("humphries-cool-papa-database").collection("dev-profiles").find().toArray();
+ // console.log("get/: ", result);
+ console.log(mongoResult);
+   //'res.send("here for a second: " + result[0].name)
+   res.render('adminCenter', { 
+     profileData : mongoResult })
+ })
+
+
+
+ 
+ 
 
 
 // app.get('/', function (req, res) {
