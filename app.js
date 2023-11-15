@@ -57,6 +57,35 @@ app.get('/sendEmail', (req, res) => {
   });
 });
 
+// app.use(express.public( path.join(__dirname, './public')));
+
+app.post('/login', (req, res) => {
+  res.render('login');
+
+});
+
+app.get('/adminCenter', async (req, res) => {
+
+  client.connect;
+   let mongoResult = await client.db("humphries-cool-papa-database").collection("dev-profiles").find().toArray();
+ // console.log("get/: ", result);
+ console.log(mongoResult);
+   //'res.send("here for a second: " + result[0].name)
+   res.render('adminCenter', { 
+     profileData : mongoResult })
+ })
+
+app.get('/order', async (req, res) => {
+
+  client.connect;
+   let mongoResult = await client.db("humphries-cool-papa-database").collection("dev-profiles").find().toArray();
+ // console.log("get/: ", result);
+ console.log(mongoResult);
+   //'res.send("here for a second: " + result[0].name)
+   res.render('order', { 
+     profileData : mongoResult })
+ })
+
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -218,30 +247,30 @@ app.post('/postClientData', function (req, res) {
   );
 })
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: emai.env.mail_send',
-    // Password needs to be hidden in ENV file
-    pass: email.env.mail_pass',
-  }
-});
+// var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: emai.env.mail_send',
+//     // Password needs to be hidden in ENV file
+//     pass: email.env.mail_pass',
+//   }
+// });
 
-var mailOptions = {
-  from: 'anna.stokes.e@gmail.com',
-  to: email.env.mail_get',
-  subject: 'Southend Kitchen Inquiry Confirmation!',
-  text; ' Hello Anna, ' + req.body.name +', left an order inquiry! Please review and respond as quicly as possible!
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
+// var mailOptions = {
+//   from: 'anna.stokes.e@gmail.com',
+//   to: email.env.mail_get',
+//   subject: 'Southend Kitchen Inquiry Confirmation!',
+//   text; ' Hello Anna, ' + req.body.name +', left an order inquiry! Please review and respond as quicly as possible!
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
 
-res.redirect('/');
-})
+// res.redirect('/');
+// })
 
 
 
