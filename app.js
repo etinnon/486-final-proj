@@ -13,7 +13,7 @@ const ejs = require('ejs');
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.static(__dirname + '/public'))
 
 // Set up Nodemailer transporter
 const transporter = nodemailer.createTransport({
@@ -74,6 +74,7 @@ app.get('/adminCenter', async (req, res) => {
    res.render('adminCenter', { 
      profileData : mongoResult })
  })
+
 
 app.get('/order', async (req, res) => {
 
@@ -179,7 +180,7 @@ app.post('/submitOrder', async (req, res) => {
   
     // put it into mongo
     let result = await collection.insertOne( 
-      { CustomerName: req.body.custName, CustomerEmail: req.body.email })
+      { CustomerName: req.body.custName, CustomerPhone: req.body.phone, CustomerCake: req.body.optradio, CustomerCustomize: req.body.customize })
       .then(result => {
         console.log(result); 
         res.redirect('/');
@@ -211,7 +212,7 @@ app.post('/deleteProfile', async (req, res) => {
       { _id: new ObjectId( req.body.devId) })
       .then(result => {
         console.log(result); 
-        res.redirect('/');
+        res.redirect('/adminCenter');
       })
       .catch(error => console.error(error))
      
