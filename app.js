@@ -57,6 +57,7 @@ app.get('/sendEmail', (req, res) => {
   });
 });
 
+
 // app.use(express.public( path.join(__dirname, './public')));
 
 app.post('/login', (req, res) => {

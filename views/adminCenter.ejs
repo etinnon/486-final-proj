@@ -38,12 +38,10 @@
     
     <% for (var i=0; i< profileData.length; i++ ) { %>
       <form method="POST">  
-        <input type="hidden" id="devId" name="devId" value="<%= profileData[i]._id %>"></input>
-        <input type="text" id="devName" name="devName" value="<%= profileData[i].CustomerName %>"></input>
-        <p> <%= profileData[i].CustomerName %>, <%= profileData[i].CustomerPhone %>, <%= profileData[i].CustomerCake %>,  <%= profileData[i].CustomerCustomize %></p>
+        <p> <b><%= profileData[i].CustomerName %>, <%= profileData[i].CustomerPhone %>, <%= profileData[i].CustomerCake %>,  <%= profileData[i].CustomerCustomize %></b></p>
 
-        <button class="btn btn-info" type="submit" formaction="/updateProfile">Update User name</button>
-        <button class="btn btn-danger" type="submit" formaction="/deleteProfile">Delete User </button>
+        <button class="btn btn-info" type="submit" formaction="/updateProfile">Update Order</button>
+        <button class="btn btn-success" type="submit" formaction="/deleteProfile">Completed Order</button>
       
       </form>
       <br/>
