@@ -23,7 +23,6 @@ const transporter = nodemailer.createTransport({
     pass: 'mail_pass',
   },
 });
-
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 app.set('views', 'views');
