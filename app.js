@@ -27,6 +27,7 @@ const transporter = nodemailer.createTransport({
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+
 // Define a route to send the email
 app.get('/sendEmail', (req, res) => {
   // Render the EJS template with the text you want to send
