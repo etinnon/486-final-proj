@@ -1,4 +1,5 @@
 <%- include('partials/html-head') %>
+<%- include('partials/background') %>
 
 
 <body class="container-fluid">
@@ -18,8 +19,8 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" target="AboutUs" href="/">
-              Webpage</a>
+            <a class="nav-link" target="_self" href="/">
+              Home!</a>
           </li> 
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://github.com/etinnon/bakers-dozen">
@@ -32,8 +33,10 @@
 
 <div class="row">
   <div class="col-md-6">
-    <h1 style="color:rgb(16, 110, 110);">Update your Profile Name</h1>
-      
+    <div class="card1">
+    <h1>Order History:</h1>
+  </div>
+    <div class="card">
     <%= console.log(profileData) %>
     
     <% for (var i=0; i< profileData.length; i++ ) { %>
@@ -47,21 +50,22 @@
       <br/>
       <% } %> 
   </div>
+</div>
 
 
   <div class="col-md-6">
-  <h2 style="color:Tomato;"> Add a new user Here!</h2>
+  <div class="card1">
+  <h2 style="color: olive"> Add a new customer:</h2>
 
     <form action="/insertProfile" method="POST">
                 
-      <input type="text" id="newDevName" name="newDevName" placeholder="Enter new user"></input>
-
-      <button class="btn btn-success" type="submit">Insert User into the database</button>
-
+      <input type="text" id="newDevName" name="newDevName" placeholder="Enter new Customer"></input>
+      <button class="btn btn-success" type="submit">Insert Customer into Database</button>
     </form>
-
+  </div>
   </div>
 </div>
+
 
 
 </body>

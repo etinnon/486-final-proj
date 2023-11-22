@@ -1,9 +1,8 @@
-
-
 <%- include('partials/html-head') %>
 <%- include('partials/background') %>
 
 <body class="container-fluid">
+  
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <div class="container-fluid">
         <a class="navbar-brand text-white" >
@@ -19,17 +18,18 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" target="AboutUs" href="/">
+            <a class="nav-link" target="_self" href="/">
               About Us!</a>
           </li> 
           <li class="nav-item">
-            <a class="nav-link" target="order" href="/order">
+            <a class="nav-link" target="_self" href="/order">
               Order Now!</a>
           </li> 
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://github.com/etinnon/bakers-dozen">
               Click For Repo!</a>
           </li> 
+
           <li>
             <div class="login-container">
               <form action="login" method = "post">
@@ -43,17 +43,20 @@
     </nav>
   
     <div class="about-section">
+      <div class="card1"> 
       <h1 style="text-align:center">About Us!</h1>
-      <p>In June of 2023, I started Southend kitchen from my apartment. My specialty is traditional Southern. I like to tell people to think of what your grandmother would make during the holidays! As of now, I offer a variety of cakes, pies, cookies, and muffins. I have a set menu, but can also customize orders. I believe there is no better way to bring people together than good food!</p>
+      <p>In June of 2023, I started Southend Kitchen from my apartment. My specialty is traditional Southern. I like to tell people to think of what your grandmother would make during the holidays! As of now, I offer a variety of cakes, pies, cookies, and muffins. I have a set menu, but can also customize orders. I believe there is no better way to bring people together than good food!</p>
+    </div>
     </div>
     
-    <h2 style="text-align:center">Our Baker</h2>
+    
     <div class="row">
       <div class="column">
-        <div class="card">
-          <img src="/img/Anna.jpg" alt="Anna" style="width:100%">
+        <div class="card"> 
+          <h1 style="text-align:center">Our Baker!</h1>
+          <center><img src="/img/Anna.jpg" alt="Anna" style="width: 350px"></center>
           <div class="container">
-            <h2 style="color:rgb(70, 164, 131);">Anna Stokes</h2>
+            <h2 style="color:rgb(255, 255, 255);">Anna Stokes</h2>
             <p class="title">CEO & Founder</p>
             <p>Hello, my name is Anna Stokes, and I want to thank you for visiting out page! As head baker of Southend Kitchen, I am thrilled to share my love of baking with you. I have been baking since I was in diapers (literally) and many of the recipes I use have been passed down for generations. Take a look around, and if you see something appetizing, send in an order inquiry. I'd love to answer any and all questions or concerns you have - stay sweet! </p>
             <p>Follow us on Facebook: Southend Kitchen</p>
