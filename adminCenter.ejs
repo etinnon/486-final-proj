@@ -1,0 +1,85 @@
+<%- include('partials/background') %>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="styles/style.css">
+
+
+
+<body class="container-fluid">
+  <body class="container-fluid">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" >
+          Baker's Dozen Admin Center</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+     
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" target="_self" href="/">
+              Home!</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://github.com/etinnon/bakers-dozen">
+              Click For Repo!</a>
+          </li> 
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card1">
+    <h1>Order History:</h1>
+  </div>
+    <div class="card">
+    <%= console.log(profileData) %>
+    
+    <% for (var i=0; i< profileData.length; i++ ) { %>
+      <form method="POST">  
+        <p> <b><%= profileData[i].CustomerName %>, <%= profileData[i].CustomerPhone %>, <%= profileData[i].CustomerCake %>,  <%= profileData[i].CustomerCustomize %></b></p>
+        <input type="hidden" id="devId" name="devId" value="<%= profileData[i]._id %>"></input>
+
+        <button class="btn btn-info" type="submit" formaction="/updateProfile">Update Order</button>
+        <button class="btn btn-success" type="submit" formaction="/deleteProfile">Completed Order</button>
+      
+      </form>
+      <br/>
+      <% } %> 
+  </div>
+</div>
+
+
+  <div class="col-md-6">
+  <div class="card1">
+  <h2 style="color: olive"> Add a new customer:</h2>
+
+    <form action="/insertProfile" method="POST">
+                
+      <input type="text" id="newDevName" name="newDevName" placeholder="Enter new Customer"></input>
+      <button class="btn btn-success" type="submit">Insert Customer into Database</button>
+    </form>
+  </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>
