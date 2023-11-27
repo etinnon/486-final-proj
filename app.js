@@ -9,7 +9,7 @@ const uri = process.env.MONGO_URI;
 // email||text capability
 const nodemailer = require('nodemailer')
 const ejs = require('ejs');
-// pass: process.env.APP_PWD
+
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,10 +17,31 @@ app.use(express.static(__dirname + '/public'))
 
 // Set up Nodemailer transporter
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'email.env.mail_host',
   auth: {
-    user: 'mail_send',
-    pass: 'mail_pass',
+    user: 'email.env.mail_send',
+    pass: 'email.env.mail_pass',
+  },
+});
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+
+
+function submitForm() {
+  // Additional client-side actions
+  alert('Client-side action: Form submitted!');
+
+  // Trigger the form submission
+  document.getElementById('myForm').submit();
+
+  // Set up Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  service: 'email.env.mail_host',
+  auth: {
+    user: 'email.env.mail_send',
+    pass: 'email.env.mail_pass',
   },
 });
 // Set the view engine to EJS
@@ -40,6 +61,7 @@ app.get('/sendEmail', (req, res) => {
         from: email.env.mail_send,
         to: email.env.mail_get,
         subject: 'New Order Inquiry!',
+        text: ('Hello Anna, ' + req.body.name +', left an order inquiry! Please review and respond as quicly as possible!'),
         html: data,
       };
 
@@ -56,7 +78,7 @@ app.get('/sendEmail', (req, res) => {
     }
   });
 });
-
+}
 
 // app.use(express.public( path.join(__dirname, './public')));
 
@@ -153,17 +175,17 @@ app.post('/updateProfile', async (req, res) => {
     // put it into mongo
     let result = await collection.findOneAndUpdate( 
       { _id: new ObjectId( req.body.devId ) },
-      {$set: {CustomerName: req.body.custName, CustomerPhone: req.body.phone, CustomerCake: req.body.optradio, CustomerCustomize: req.body.customize }})
+      {$set: {name: req.body.devName }})
       .then(result => {
         console.log(result); 
-        res.redirect('/adminCenter');
+        res.redirect('/');
       })
       .catch(error => console.error(error))
      
    
   }
   finally{
-    //client.close()
+    client.close()
   }
 })
 
@@ -185,33 +207,6 @@ app.post('/submitOrder', async (req, res) => {
       .then(result => {
         console.log(result); 
         res.redirect('/');
-      })
-      .catch(error => console.error(error))
-      
-     
-   
-  }
-  finally{
-    //client.close()
-  }
-})
-
-app.post('/addOrder', async (req, res) => {
-
-  try {
-    //get the new dev name
-    console.log("body: ", req.body)
-    console.log("user Name: ", req.body.custName)
-    
-    client.connect; 
-    const collection = client.db("humphries-cool-papa-database").collection("dev-profiles");
-  
-    // put it into mongo
-    let result = await collection.insertOne( 
-      { CustomerName: req.body.custName, CustomerPhone: req.body.phone, CustomerCake: req.body.optradio, CustomerCustomize: req.body.customize })
-      .then(result => {
-        console.log(result); 
-        ares.redirect('/adminCenter');
       })
       .catch(error => console.error(error))
       
@@ -276,43 +271,7 @@ app.post('/postClientData', function (req, res) {
   );
 })
 
-// var transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: emai.env.mail_send',
-//     // Password needs to be hidden in ENV file
-//     pass: email.env.mail_pass',
-//   }
-// });
-
-// var mailOptions = {
-//   from: 'anna.stokes.e@gmail.com',
-//   to: email.env.mail_get',
-//   subject: 'Southend Kitchen Inquiry Confirmation!',
-//   text; ' Hello Anna, ' + req.body.name +', left an order inquiry! Please review and respond as quicly as possible!
-// transporter.sendMail(mailOptions, function(error, info){
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log('Email sent: ' + info.response);
-//   }
-// });
-
-// res.redirect('/');
-// })
 
 
-
-// app.get('/', function (req, res) {
-//   res.send('<h1>Hello World From Express & a PaaS/Render</h1>')
-// })
-
-// app.get('/whatever', function (req, res) {
-//   res.sendFile(__dirname + '/index.html');
-// })
-
-
-
-// app.listen(3000)
 
 app.listen(port, () => console.log(`Server is running...on ${ port }` ));
