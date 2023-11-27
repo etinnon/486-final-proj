@@ -153,10 +153,10 @@ app.post('/updateProfile', async (req, res) => {
     // put it into mongo
     let result = await collection.findOneAndUpdate( 
       { _id: new ObjectId( req.body.devId ) },
-      {$set: {name: req.body.devName }})
+      {$set: {CustomerName: req.body.custName, CustomerPhone: req.body.phone, CustomerCake: req.body.optradio, CustomerCustomize: req.body.customize }})
       .then(result => {
         console.log(result); 
-        res.redirect('/');
+        res.redirect('/adminCenter');
       })
       .catch(error => console.error(error))
      
@@ -185,6 +185,33 @@ app.post('/submitOrder', async (req, res) => {
       .then(result => {
         console.log(result); 
         res.redirect('/');
+      })
+      .catch(error => console.error(error))
+      
+     
+   
+  }
+  finally{
+    //client.close()
+  }
+})
+
+app.post('/addOrder', async (req, res) => {
+
+  try {
+    //get the new dev name
+    console.log("body: ", req.body)
+    console.log("user Name: ", req.body.custName)
+    
+    client.connect; 
+    const collection = client.db("humphries-cool-papa-database").collection("dev-profiles");
+  
+    // put it into mongo
+    let result = await collection.insertOne( 
+      { CustomerName: req.body.custName, CustomerPhone: req.body.phone, CustomerCake: req.body.optradio, CustomerCustomize: req.body.customize })
+      .then(result => {
+        console.log(result); 
+        ares.redirect('/adminCenter');
       })
       .catch(error => console.error(error))
       
