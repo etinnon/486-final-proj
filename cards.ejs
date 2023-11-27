@@ -1,0 +1,160 @@
+<div class="row">
+  <!-- First Card -->
+      <div class="col-sm-4">
+        <form method="post" action="/submitOrder">
+        <div class="card">
+          <h4 class="card-title">Pound Cake</h4>
+          <div class="card-body">
+            <img class="card-img-top img-responsive" src="/img/poundcake.jpg" alt="Pound Cake" width= '250' height= '350'> 
+            <p class="card-text">Cake Sizes:</p>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeMedium" >Medium
+              <label class="form-check-label" for="radio1"></label>
+            </div>
+
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="radio1" name="optradio" value="CakeSizeLarge" >Large
+              <label class="form-check-label" for="radio1"></label>
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="custName" class="form-label">Name:</label>
+              <input type="textbox1" class="form-control" id="custName" placeholder="" name="custName">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone:</label>
+              <input type="textbox" class="form-control" id="phone" placeholder="" name="phone">
+            </div>
+            <label for="textbox" > Explain how you would like your cake customized:</label> <br>
+            <aside><textarea id="textarea" placeholder= "Place text here" name="customize" rows="4" cols="30"></textarea></aside>
+            <button id="formSubmit" type="submit" onclick=" confirm('Process your request')" class="btn btn-primary">Submit Request</button>
+            <button id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+          </div>
+        </div>
+      </div>
+
+       <!-- Second Card -->
+  <div class="col-sm-4">
+    <div class="card">
+      <h4 class="card-title">Butter Pecan</h4>
+      <div class="card-body">
+        <img class="card-img-top img-responsive" src="/img/butter pecan.jpg" width= '250' height= '350'> 
+        <p class="card-text">Cake Sizes:</p>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="" name="" value="CakeSizeLarge" >Medium
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="" name="" value="CakeSizeMedium" >Large
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="custName" class="form-label">Name:</label>
+          <input type="textbox1" class="form-control" id="" placeholder="" name="">
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone:</label>
+          <input type="textbox" class="form-control" id="" placeholder="" name="">
+        </div>
+        <label for="textbox" > Explain how you would like your cake customized:</label> <br>
+        <aside><textarea id="textarea" placeholder= "Place text here" name="" rows="4" cols="30"></textarea></aside>
+        <button disabled id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
+        <button disabled id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+      </div>
+    </div>
+  </div>
+   <!-- Third Card -->
+   <div class="col-sm-4">
+    <div class="card">
+      <h4 class="card-title">Lemon Velvet</h4>
+      <div class="card-body">
+        <img class="card-img-top img-responsive" src="/img/Lemon Velvet.jpg" width= '250' height= '350'> 
+        <p class="card-text">Cake Sizes:</p>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="" name="" value="CakeSizeLarge" >Medium
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="" value="CakeSizeMedium" >Large
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="custName" class="form-label">Name:</label>
+          <input type="textbox1" class="form-control" id="custName" placeholder="" name="">
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone:</label>
+          <input type="textbox" class="form-control" id="phone" placeholder="" name="">
+        </div>
+        <label for="textbox" > Explain how you would like your cake customized:</label> <br>
+        <aside><textarea id="textarea" placeholder= "Place text here" name="" rows="4" cols="30"></textarea></aside>
+        <button disabled id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
+        <button disabled id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+      </div>
+    </div>
+  </div>
+      
+     <!-- Fourth Card -->
+     <div class="col-sm-4">
+      <div class="card">
+        <h4 class="card-title">Red Velvet Cake</h4>
+        <div class="card-body">
+          <img class="card-img-top img-responsive" src="/img/redvelvet.jpg" width= '250' height= '350'> 
+          <p class="card-text">Cake Sizes:</p>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="radio1" name="" value="CakeSizeLarge" >Medium
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="radio1" name="" value="CakeSizeMedium" >Large
+            <label class="form-check-label" for="radio1"></label>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="custName" class="form-label">Name:</label>
+            <input type="textbox1" class="form-control" id="custName" placeholder="" name="">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone:</label>
+            <input type="textbox" class="form-control" id="phone" placeholder="" name="">
+          </div>
+          <label for="textbox" > Explain how you would like your cake customized:</label> <br>
+          <aside><textarea id="textarea" placeholder= "Place text here" name="" rows="4" cols="30"></textarea></aside>
+          <button disabled id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
+          <button disabled id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+        </div>
+      </div>
+    </div>
+      
+   <!-- Fifth Card -->
+   <div class="col-sm-4">
+    <div class="card">
+      <h4 class="card-title">Key Lime Cake</h4>
+      <div class="card-body">
+        <img class="card-img-top img-responsive" src="/img/keylime.jpg" width= '250' height= '350'> 
+        <p class="card-text">Cake Sizes:</p>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="" value="CakeSizeLarge" >Medium
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="" value="CakeSizeMedium" >Large
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="custName" class="form-label">Name:</label>
+          <input type="textbox1" class="form-control" id="custName" placeholder="" name="">
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone:</label>
+          <input type="textbox" class="form-control" id="phone" placeholder="" name="">
+        </div>
+        <label for="textbox" > Explain how you would like your cake customized:</label> <br>
+        <aside><textarea id="textarea" placeholder= "Place text here" name="" rows="4" cols="30"></textarea></aside>
+        <button disabled id="formSubmit" type="submit" class="btn btn-primary">Submit Request</button>
+        <button disabled id="resetForm" class="btn btn-danger" onClick="refreshPage();">Reset Form</button>
+      </div>
+    </div>
+  </div>
+  
+  
+      
+    </div>
